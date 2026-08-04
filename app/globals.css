@@ -1,0 +1,37 @@
+:root {
+  --accent: #4f46e5;
+  --accent-dark: #4338ca;
+  --accent-tint: #eef0fd;
+  --ink: #1e293b;
+  --ink-soft: #64748b;
+  --paper: #f8fafc;
+  --card: #ffffff;
+  --line: #e2e8f0;
+  --critical: #d5382e;
+  --critical-tint: #fdeeed;
+  --warn: #b7791f;
+  --warn-tint: #fdf6e9;
+  --warn-line: #ecd9b0;
+  --info-tint: #eef4fb;
+  --info: #2b6cb0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 15px; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mono, .num {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+a { color: var(--accent-dark); }
+
+::selection { background: var(--accent); color: white; }

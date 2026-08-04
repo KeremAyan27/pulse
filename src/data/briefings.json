@@ -1,0 +1,78 @@
+[
+  {
+    "date": "2026-07-05",
+    "headline": "Güçlü pazar kapanışı: GMV 7 günlük ortalamanın %21 üzerinde",
+    "what": "Dün toplam GMV 48,5M TL ile son 7 gün ortalamasının %21 üzerinde gerçekleşti - haftanın en yüksek günü. Uçak dikeyinin payı %59. İptal oranları normal bantta (uçak %7,0, otel %10,9); toplam iptal %7,5 ile haftanın en düşüğü. Mobil uygulama dönüşümü %3,2.",
+    "why": "Pazar günü tatil rotalarında (AYT, ADB) dönüş trafiği ve hafta başı iş seyahati rezervasyonları aynı güne denk geldi. Yaz sezonu talebi beklenen seyrinde; olağan dışı bir sinyal yok.",
+    "actions": [
+      "Aksiyon gerektiren kritik konu yok - haftalık plana devam.",
+      "Temmuz ortası bayram dönemi kontenjan planlaması için otel ekibiyle bu hafta hizalanma öneririm.",
+      "IST-DXB rotasında talep 3 gündür artıyor; fiyatlama ekibi izlemeye alabilir."
+    ]
+  },
+  {
+    "date": "2026-07-04",
+    "headline": "Cumartesi yavaşlaması normal seyrinde; uygulama dönüşümü haftanın en yükseği",
+    "what": "GMV 33,3M TL ile hafta ortalamasının altında - cumartesi mevsimselliğiyle uyumlu. Mobil uygulama dönüşümü %3,5 ile haftanın en yüksek seviyesine çıktı. İptal oranı %9,2 ile normal bantta; ödeme hatası kaynaklı iptaller %16.",
+    "why": "Hafta sonu düşüşü yapısal (B2C ağırlıklı trafik). Uygulama dönüşümündeki artış, hafta sonu trafiğinin daha yüksek alım niyetli olmasıyla tutarlı.",
+    "actions": [
+      "Hafta sonu uygulama dönüşüm avantajı için cumartesi push bildirim saatlerinde A/B testi öneririm.",
+      "Pazartesi brifingine haftalık kanal karışımı trendini ekletin."
+    ]
+  },
+  {
+    "date": "2026-07-03",
+    "headline": "Sakin cuma: metrikler bantta, bayram öncesi talep izlemede",
+    "what": "GMV 36,7M TL ile 7 günlük ortalamaya paralel. Uçak dikeyinin payı %60, iptal oranları normal (uçak %8,8, otel %10,5). Kanal dönüşümleri dengede; mobil uygulama %3,3.",
+    "why": "Temmuz ortası bayram dönemi için arama trafiği kademeli artıyor ancak rezervasyona dönüş henüz başlamadı - kullanıcılar fiyat izleme aşamasında. Önümüzdeki 7-10 günde rezervasyon artışı beklenebilir.",
+    "actions": [
+      "Bayram dönemine özel kampanya varsa lansman zamanlaması bu hafta netleşmeli.",
+      "Yüksek talepli rotalarda (IST-AYT, SAW-ADA) kontenjan ve fiyat izleme sıklığı artırılabilir.",
+      "Otel ekibi Bodrum ve Kapadokya'da son dakika kontenjan anlaşmalarını öne alabilir."
+    ]
+  },
+  {
+    "date": "2026-07-02",
+    "headline": "Normal seyir; iptal oranı haftanın en düşüğü",
+    "what": "GMV 38,7M TL, plan dahilinde. Toplam iptal oranı %8,1 ile haftanın en düşük seviyesinde (uçak %7,6, otel %11,4). Uçak dikeyinin payı %61. Mobil uygulama dönüşümü %3,3.",
+    "why": "29 Haziran'daki ödeme sorunu sonrası üçüncü temiz gün; sistem stabil. İptal oranındaki gerileme, olay döneminde biriken kullanıcı tedirginliğinin normalleştiğini gösteriyor.",
+    "actions": [
+      "Ödeme olayı kapatılabilir; post-mortem raporu bu hafta yönetim gündemine alınmalı.",
+      "Uygulama dönüşümündeki istikrar app-first yatırımını destekliyor; retention ekibi ilk 30 gün akışını önceliklendirebilir."
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "headline": "Temmuz güçlü başladı: GMV 40,5M TL",
+    "what": "Ayın ilk günü GMV 40,5M TL ile son 7 gün ortalamasının üzerinde. Haziran, ödeme olayına rağmen hedefe yakın kapandı. İptal oranları normale döndü (toplam %9,3); ödeme hatası kaynaklı iptaller %16.",
+    "why": "Ay başı kurumsal seyahat rezervasyonları ve yaz talebi aynı döneme denk geldi. 29 Haziran'da rezervasyonu iptal olan kullanıcıların bir kısmı bu hafta geri döndü.",
+    "actions": [
+      "Haziran kapanış raporu bugün yönetim gündemine alınmalı; ödeme olayının aylık etkisi tek slaytta özetlenmeli.",
+      "Geri dönmeyen etkilenen kullanıcı segmentine win-back kampanyası bu hafta çıkmalı.",
+      "Temmuz hedefleri bayram etkisiyle gözden geçirilmeli."
+    ]
+  },
+  {
+    "date": "2026-06-30",
+    "headline": "Toparlanma günü: ödeme sorunu çözüldü, iptal oranları normale döndü",
+    "what": "Dünkü ödeme kaynaklı iptal artışının ardından metrikler normalleşti: uçak iptal oranı %24,8'den %9,0'a geriledi; ödeme hatası kaynaklı iptaller toplam iptallerin %19'una düştü (önceki gün %59). GMV 38,2M TL ile haftalık banda döndü. Mobil uygulama dönüşümü %3,0.",
+    "why": "Ödeme sağlayıcıdaki 3D Secure zaman aşımı sorunu dün öğleden sonra giderildi. Etkilenen kullanıcıların bir kısmı aynı gün yeniden rezervasyon yaptı; kalıcı kayıp sınırlı görünüyor.",
+    "actions": [
+      "Dün etkilenen ve geri dönmeyen kullanıcı segmentine telafi kuponuyla win-back kampanyası öneririm.",
+      "Ödeme sağlayıcıyla post-mortem bu hafta yapılmalı; SLA ihlali söz konusu.",
+      "Yedek ödeme sağlayıcıya otomatik yönlendirme (failover) projesi önceliklendirilmeli."
+    ]
+  },
+  {
+    "date": "2026-06-29",
+    "headline": "KRİTİK: Ödeme hatası kaynaklı iptal artışı - müdahale gerekiyor",
+    "what": "Uçak dikeyinde iptal oranı %24,8'e çıktı (7 günlük ortalama ~%8'in 3 katı), otelde %26,4. Toplam iptal oranı %22,7. İptallerin %59'u ödeme hatası kaynaklı - normal seviye ~%15. Mobil uygulama dönüşümü %2,5'e geriledi. GMV 46,4M TL görünse de iptaller düşüldüğünde net etki belirgin.",
+    "why": "Sabah saatlerinden itibaren ödeme adımında yoğunlaşan hata paterni, sorunun tek bir noktadan - büyük olasılıkla ödeme sağlayıcının 3D Secure akışından - kaynaklandığına işaret ediyor. Talep tarafında sorun yok: arama hacmi normal, sorun dönüşüm hunisinin son adımında.",
+    "actions": [
+      "Ödeme sağlayıcıyla teknik köprü kurulmalı; sorun onların tarafındaysa SLA kaydı açılmalı.",
+      "Ödeme adımında kullanıcıya alternatif yöntem (havale/ikinci kart sağlayıcı) gösterilmeli.",
+      "Müşteri hizmetlerine proaktif bilgilendirme scripti verilmeli; çağrı hacmi artacaktır.",
+      "Etkilenen kullanıcılar etiketlenmeli; sorun çözülünce win-back kampanyası için segment hazır olmalı."
+    ]
+  }
+]

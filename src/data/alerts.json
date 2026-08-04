@@ -1,0 +1,146 @@
+[
+ {
+  "date": "2026-05-26",
+  "type": "demand_spike",
+  "vertical": "hotel",
+  "severity": "info",
+  "detail": "hotel rezervasyonları 7 günlük ortalamanın %50 üzerinde",
+  "value": 2007,
+  "baseline": 1339
+ },
+ {
+  "date": "2026-05-26",
+  "type": "demand_spike",
+  "vertical": "bus",
+  "severity": "info",
+  "detail": "bus rezervasyonları 7 günlük ortalamanın %36 üzerinde",
+  "value": 900,
+  "baseline": 662
+ },
+ {
+  "date": "2026-05-26",
+  "type": "demand_spike",
+  "vertical": "car",
+  "severity": "info",
+  "detail": "car rezervasyonları 7 günlük ortalamanın %30 üzerinde",
+  "value": 517,
+  "baseline": 396
+ },
+ {
+  "date": "2026-05-27",
+  "type": "demand_spike",
+  "vertical": "flight",
+  "severity": "info",
+  "detail": "flight rezervasyonları 7 günlük ortalamanın %35 üzerinde",
+  "value": 5795,
+  "baseline": 4292
+ },
+ {
+  "date": "2026-05-27",
+  "type": "demand_spike",
+  "vertical": "hotel",
+  "severity": "info",
+  "detail": "hotel rezervasyonları 7 günlük ortalamanın %35 üzerinde",
+  "value": 1961,
+  "baseline": 1448
+ },
+ {
+  "date": "2026-05-27",
+  "type": "demand_spike",
+  "vertical": "bus",
+  "severity": "info",
+  "detail": "bus rezervasyonları 7 günlük ortalamanın %37 üzerinde",
+  "value": 971,
+  "baseline": 709
+ },
+ {
+  "date": "2026-05-27",
+  "type": "demand_spike",
+  "vertical": "transfer",
+  "severity": "info",
+  "detail": "transfer rezervasyonları 7 günlük ortalamanın %42 üzerinde",
+  "value": 405,
+  "baseline": 285
+ },
+ {
+  "date": "2026-05-28",
+  "type": "demand_spike",
+  "vertical": "hotel",
+  "severity": "info",
+  "detail": "hotel rezervasyonları 7 günlük ortalamanın %33 üzerinde",
+  "value": 2042,
+  "baseline": 1536
+ },
+ {
+  "date": "2026-05-28",
+  "type": "demand_spike",
+  "vertical": "bus",
+  "severity": "info",
+  "detail": "bus rezervasyonları 7 günlük ortalamanın %32 üzerinde",
+  "value": 1000,
+  "baseline": 759
+ },
+ {
+  "date": "2026-05-28",
+  "type": "demand_spike",
+  "vertical": "car",
+  "severity": "info",
+  "detail": "car rezervasyonları 7 günlük ortalamanın %37 üzerinde",
+  "value": 599,
+  "baseline": 437
+ },
+ {
+  "date": "2026-06-29",
+  "type": "cancel_spike",
+  "vertical": "flight",
+  "severity": "critical",
+  "detail": "flight iptal oranı 7 günlük ortalamanın 3.0 katı",
+  "value": 0.2478,
+  "baseline": 0.083
+ },
+ {
+  "date": "2026-06-29",
+  "type": "cancel_spike",
+  "vertical": "hotel",
+  "severity": "critical",
+  "detail": "hotel iptal oranı 7 günlük ortalamanın 2.3 katı",
+  "value": 0.2636,
+  "baseline": 0.1147
+ },
+ {
+  "date": "2026-06-29",
+  "type": "cancel_spike",
+  "vertical": "bus",
+  "severity": "critical",
+  "detail": "bus iptal oranı 7 günlük ortalamanın 2.2 katı",
+  "value": 0.1308,
+  "baseline": 0.0602
+ },
+ {
+  "date": "2026-06-29",
+  "type": "cancel_spike",
+  "vertical": "car",
+  "severity": "critical",
+  "detail": "car iptal oranı 7 günlük ortalamanın 2.3 katı",
+  "value": 0.1529,
+  "baseline": 0.0653
+ },
+ {
+  "date": "2026-06-29",
+  "type": "cancel_spike",
+  "vertical": "transfer",
+  "severity": "critical",
+  "detail": "transfer iptal oranı 7 günlük ortalamanın 2.2 katı",
+  "value": 0.1096,
+  "baseline": 0.0496
+ },
+ {
+  "date": "2026-06-29",
+  "type": "payment_errors",
+  "vertical": "all",
+  "severity": "critical",
+  "detail": "İptallerin %59'i ödeme hatası kaynaklı (normal ~%15)",
+  "value": 0.59,
+  "baseline": 0.15
+ }
+]

@@ -1,0 +1,81 @@
+{
+  "name": "Pulse OTA — Günlük Sabah Brifingi",
+  "nodes": [
+    {
+      "parameters": { "rule": { "interval": [{ "field": "cronExpression", "expression": "0 7 * * *" }] } },
+      "name": "Her sabah 07:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "url": "https://YOUR-DEPLOYMENT.vercel.app/data/daily-summary.json",
+        "options": {}
+      },
+      "name": "Günlük metrikleri çek",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [220, 0]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Dünün metriklerini ve 7 günlük baz çizgisini hazırla + kural tabanlı anomali tespiti\nconst days = $input.first().json;\nconst y = days[days.length - 1];\nconst win = days.slice(-8, -1);\nconst avg = (f) => win.reduce((a, d) => a + f(d), 0) / win.length;\n\nconst anomalies = [];\nfor (const v of Object.keys(y.verticals)) {\n  const base = avg((d) => d.verticals[v].cancel_rate);\n  if (y.verticals[v].cancel_rate > base * 1.8) {\n    anomalies.push({ type: 'cancel_spike', vertical: v, value: y.verticals[v].cancel_rate, baseline: base });\n  }\n}\nconst pe = y.cancel_reasons.payment_error / Object.values(y.cancel_reasons).reduce((a,b)=>a+b,0);\nif (pe > 0.35) anomalies.push({ type: 'payment_errors', share: pe, baseline: 0.15 });\n\nreturn [{ json: { yesterday: y, baseline_7d: { gmv: avg(d => Object.values(d.verticals).reduce((a,x)=>a+x.gmv,0)) }, anomalies } }];"
+      },
+      "name": "Anomali motoru (kural tabanlı)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [440, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "x-api-key", "value": "={{ $env.ANTHROPIC_API_KEY }}" },
+            { "name": "anthropic-version", "value": "2023-06-01" },
+            { "name": "content-type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\n  model: 'claude-sonnet-4-6',\n  max_tokens: 1200,\n  system: 'Sen bir OTA yönetim ekibi için günlük sabah brifingi yazan bir analiz asistanısın. Sana JSON formatında dünün metrikleri, 7 günlük baz çizgisi ve tespit edilmiş anomaliler verilecek. SADECE şu JSON şemasında yanıt ver, başka hiçbir şey yazma: {\\\"headline\\\": string, \\\"what\\\": string, \\\"why\\\": string, \\\"actions\\\": string[]}. Kurallar: headline tek cümle ve durumu özetler; what bölümü somut rakamlarla dünü anlatır; why bölümü nedensel yorum yapar ama emin olmadığın yerde ihtimal dili kullanır; actions 2-4 madde, her biri sorumlu ekibi ima eden somut öneri. Kritik anomali varsa headline KRİTİK ile başlar. Türkçe yaz, abartma, rakam uydurma - sadece verilen veriyi kullan.',\n  messages: [{ role: 'user', content: JSON.stringify($json) }]\n}) }}",
+        "options": {}
+      },
+      "name": "Claude — brifing üret",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [660, 0]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Claude yanıtını parse et\nconst raw = $input.first().json.content[0].text.replace(/```json|```/g, '').trim();\nconst briefing = JSON.parse(raw);\nbriefing.date = new Date(Date.now() - 86400000).toISOString().slice(0, 10);\nreturn [{ json: briefing }];"
+      },
+      "name": "Yanıtı parse et",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [880, 0]
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "requestOptions": {}
+      },
+      "name": "briefings.json'a ekle + yönetime e-posta",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [1100, 0],
+      "notes": "Prod'da: repo'ya commit / DB'ye yaz + SMTP node ile CEO Office dağıtım listesine gönder"
+    }
+  ],
+  "connections": {
+    "Her sabah 07:00": { "main": [[{ "node": "Günlük metrikleri çek", "type": "main", "index": 0 }]] },
+    "Günlük metrikleri çek": { "main": [[{ "node": "Anomali motoru (kural tabanlı)", "type": "main", "index": 0 }]] },
+    "Anomali motoru (kural tabanlı)": { "main": [[{ "node": "Claude — brifing üret", "type": "main", "index": 0 }]] },
+    "Claude — brifing üret": { "main": [[{ "node": "Yanıtı parse et", "type": "main", "index": 0 }]] },
+    "Yanıtı parse et": { "main": [[{ "node": "briefings.json'a ekle + yönetime e-posta", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1" }
+}
